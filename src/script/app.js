@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('header .mobile-menu .features .search').classList.toggle('expanded');
   })
 
+  new Glide('.sec5-cards', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 1
+  }).mount();
+
   const loadMoreProductCards = document.getElementById('load-more-cards');
   const productCards = document.querySelectorAll('.sec-4-card');
   let visibleCards = getVisibleCardValue();
@@ -35,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, wait);
     };
   }
-  
+
   function showCards() {
     const remainingCards = productCards.length - activeVisibleCards;
     const cardsToShow = Math.min(cardToOpen, remainingCards);
@@ -83,4 +89,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-

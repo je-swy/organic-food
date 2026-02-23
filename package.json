@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/je-swy/organic-food#readme",
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
     "gulp": "^5.0.1",
     "sass": "^1.97.3"
   },
