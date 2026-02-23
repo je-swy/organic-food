@@ -97,7 +97,7 @@
       font-size: 36px;
       margin-bottom: 5px;
     }
-    
+
     h3 {
       font-size: 40px;
       line-height: 42px;
@@ -109,11 +109,11 @@
     .sec-2__banner {
       padding: 30px;
       border-radius: 20px;
-  
+
       p {
         font-size: 30px;
       }
-      
+
       h3 {
         font-size: 34px;
         line-height: 36px;
@@ -125,11 +125,11 @@
     .sec-2__banner {
       padding: 20px;
       border-radius: 15px;
-  
+
       p {
         font-size: 24px;
       }
-      
+
       h3 {
         font-size: 30px;
         line-height: 32px;
@@ -141,11 +141,11 @@
     .sec-2__banner {
       padding: 15px;
       border-radius: 15px;
-  
+
       p {
         font-size: 20px;
       }
-      
+
       h3 {
         font-size: 24px;
         line-height: 26px;
@@ -157,11 +157,11 @@
     .sec-2__banner {
       padding: 10px;
       border-radius: 10px;
-  
+
       p {
         font-size: 16px;
       }
-      
+
       h3 {
         font-size: 20px;
         line-height: 22px;
@@ -185,7 +185,7 @@
         font-size: 12px;
         margin-bottom: 3px;
       }
-      
+
       h3 {
         font-size: 16px;
         line-height: 18px;
@@ -261,7 +261,7 @@
       width: 40%;
       margin-right: 30px;
     }
-  
+
     .sec-3__text {
       width: 60%;
 
@@ -270,23 +270,23 @@
         line-height: 18px;
         margin-bottom: 35px;
       }
-  
+
       ul {
         margin-bottom: 35px;
 
         li {
           gap: 15px;
           margin-bottom: 20px;
-  
+
           span {
             &.icon {
               width: 80px;
             }
-  
+
             &.text {
               font-size: 16px;
               line-height: 18px;
-  
+
               strong {
                 font-size: 22px;
                 margin-bottom: 7px;
@@ -312,16 +312,16 @@
         li {
           gap: 15px;
           margin-bottom: 15px;
-  
+
           span {
             &.icon {
               width: 60px;
             }
-  
+
             &.text {
               font-size: 14px;
               line-height: 16px;
-  
+
               strong {
                 font-size: 18px;
               }
@@ -340,7 +340,9 @@
     .sec-3__text {
       width: 100%;
 
-      h3, h2, p {
+      h3,
+      h2,
+      p {
         text-align: center;
       }
 
@@ -387,7 +389,9 @@
 
 
 .sec-4 {
-  h3, h2 {
+
+  h3,
+  h2 {
     text-align: center;
   }
 
@@ -451,7 +455,7 @@
     .sec-4-cards {
       margin-bottom: 25px;
     }
-    
+
     button {
       padding: 7px;
     }
@@ -465,7 +469,8 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  h2, h3 {
+  h2,
+  h3 {
     text-align: center;
   }
 
@@ -584,13 +589,16 @@
           width: 100px;
           margin-bottom: 10px;
         }
+
         &.rating {
           font-size: 25px;
           margin-bottom: 15px;
         }
+
         &.description {
           font-size: 16px;
         }
+
         &.name {
           font-size: 23px;
         }
@@ -618,9 +626,11 @@
     .sec5-cards {
       margin-bottom: 80px;
     }
+
     .sec5-stats {
       gap: 20px;
     }
+
     .sec5-stats-block {
       width: 120px;
 
@@ -639,25 +649,30 @@
       width: 95%;
       margin-bottom: 60px;
     }
+
     .sec5-card {
       span {
         &.photo {
           width: 80px;
           margin-bottom: 5px;
         }
+
         &.rating {
           font-size: 20px;
           margin-bottom: 10px;
         }
+
         &.description {
           font-size: 14px;
           margin-bottom: 10px;
         }
+
         &.name {
           font-size: 18px;
         }
       }
     }
+
     .sec5-stats-block {
       width: 100px;
 
@@ -677,23 +692,74 @@
         &.photo {
           margin-bottom: 3px;
         }
+
         &.rating {
           font-size: 18px;
           margin-bottom: 3px;
         }
+
         &.name {
           margin-bottom: 0;
         }
+
         &.role {
           font-size: 13px;
         }
       }
     }
+
     .sec5-stats {
       gap: 5px;
     }
+
     .sec5-stats-block {
       padding: 3px;
+    }
+  }
+}
+
+.sec-6 {
+  background-color: $text-color;
+
+  .sec-6-up {
+    margin-bottom: 50px;
+
+    h2 {
+      color: $white-color;
+    }
+
+    a {
+      background-color: $accent-yellow-color;
+    }
+  }
+
+  @include onSmallDesktop {
+    .sec-6-up {
+      margin-bottom: 30px;
+    }
+
+    .sec-6-card {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  @include onSmallTablet {
+    .sec-6-up {
+      margin-bottom: 20px;
+    }
+
+    .sec-6-card {
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+
+  @include onMobile {
+    .sec-6-up {
+      margin-bottom: 10px;
     }
   }
 }
