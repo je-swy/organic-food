@@ -122,4 +122,42 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('body').classList.remove('overflow');
     })
   });
+
+
+  function isEmailValid(value) {
+    const emailValidateRegExp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+    return emailValidateRegExp.test(value);
+  }
+
+  emailjs.init({
+    publicKey: "g3a8K7C6xKrDLKvqj",
+  });
+
+  const formBtn = document.getElementById('form-submit');
+  const emailField = document.getElementById('email-input');
+
+  formBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const currentEmail = emailField.value;
+    const isCurrentEmailValid = isEmailValid(currentEmail);
+
+    if (isCurrentEmailValid) {
+      emailjs
+        .send("service_473vmpj", "template_1wsqmkp", {
+          user_email: currentEmail,
+        })
+        .then(function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          emailField.value = '';
+        })
+        .catch(function (error) {
+          console.log("FAILED...", error);
+        });
+      emailField.value = ''; //clear form after submiting
+    } else {
+      console.log('Please type correct email adress!')
+    }
+  })
 });
