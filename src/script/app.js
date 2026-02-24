@@ -297,6 +297,10 @@ document.addEventListener('DOMContentLoaded', function () {
       generalModalWrapper.classList.add('visible');
       modalEl.classList.add('visible');
       document.querySelector('body').classList.add('overflow');
+
+      if (modalId === 'cart-modal') {
+        displaySelectedProducts();
+      }
     });
   })
 
