@@ -1,5 +1,5 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use 'mixins' as *;
+@use 'variables' as *;
 
 .product-cards {
   display: grid;
@@ -45,6 +45,8 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   .title {
@@ -110,6 +112,15 @@
     &:hover {
       background-color: transparent;
       color: $text-color;
+    }
+
+    &.active {
+      background-color: transparent;
+      color: $text-color;
+
+      &:hover {
+        transform: scale(0.95);
+      }
     }
   }
 
