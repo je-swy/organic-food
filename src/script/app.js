@@ -339,15 +339,45 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
 
     const currentEmail = emailField.value;
-    const isCurrentEmailValid = isEmailValid(currentEmail);
 
-    if (isCurrentEmailValid) {
+    if (isEmailValid(currentEmail)) {
       emailjs.send("service_473vmpj", "template_1wsqmkp", {
+        email: currentEmail,
+        name: "Guest",
+        message: "User have left email: " + currentEmail
+      })
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          if (typeof notifier !== 'undefined') {
+            notifier.success('Email sent successfully!');
+          }
+          emailField.value = '';
+        }, function (error) {
+          console.log('FAILED...', error);
+          alert('Error sending email: ' + JSON.stringify(error));
+        });
+
+      const templateParams = {
         user_email: currentEmail,
-      });
-      emailField.value = '';
+        name: "organic.food2500",
+        message: "Thank you for subscribing!"
+      };
+      
+      emailjs.send("service_473vmpj", "template_f0fbiw9", templateParams)
+        .then(() => {
+          notifier.success('Thank you! Please check your mail.');
+          emailField.value = '';
+        })
+        .catch((err) => {
+          console.error('Упс:', err);
+        });
+
     } else {
-      notifier.alert('Please type correct email address!');
+      if (typeof notifier !== 'undefined') {
+        notifier.alert('Please type correct email address!');
+      } else {
+        alert('Please type correct email address!');
+      }
     }
   });
 
